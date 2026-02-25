@@ -64,10 +64,10 @@ Use `/spec:sync us-hockey-gold` to create GitHub issues.
 
 | Wave | Tasks | Issue | Status |
 |------|-------|-------|--------|
-| Wave 1 | T001-T004 | - | pending |
-| Wave 2 | T005-T008 | - | pending |
-| Wave 3 | T009-T011 | - | pending |
-| Wave 4 | T012-T014 | - | pending |
+| Wave 1 | T001-T004 | #1 | open |
+| Wave 2 | T005-T008 | #2 | open |
+| Wave 3 | T009-T011 | #3 | open |
+| Wave 4 | T012-T014 | #4 | open |
 
 ---
 
