@@ -194,11 +194,25 @@ h4 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 30% 50%, rgba(0, 40, 104, 0.6) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 50%, rgba(191, 10, 48, 0.4) 0%, transparent 60%),
-    linear-gradient(180deg, var(--bg-dark) 0%, #0D1B3E 50%, var(--bg-dark) 100%);
   z-index: 0;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.35) saturate(1.2);
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(0, 40, 104, 0.5) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(191, 10, 48, 0.3) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(10, 10, 26, 0.4) 0%, transparent 40%, rgba(10, 10, 26, 0.9) 100%);
 }
 
 .hero-bg::before {
@@ -562,6 +576,123 @@ h4 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   font-weight: 500;
 }
 
+/* --- Gallery Grid --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 4/3;
+  background: var(--bg-dark);
+}
+
+.gallery-item-wide {
+  grid-column: span 2;
+  aspect-ratio: 16/7;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth), filter var(--transition-smooth);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1rem 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--usa-white);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Lightbox --- */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  cursor: pointer;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 0 60px rgba(255, 215, 0, 0.1);
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  background: none;
+  color: var(--usa-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition-fast);
+}
+
+.lightbox-close:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
 /* --- Placeholder Sections (Wave 2-4) --- */
 .placeholder-section {
   min-height: 300px;
@@ -649,6 +780,15 @@ h4 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   .roster-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item-wide {
+    grid-column: span 1;
+    aspect-ratio: 16/9;
   }
 
   .hero h1 {

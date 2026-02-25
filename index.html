@@ -34,7 +34,9 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
-    <div class="hero-bg parallax-bg"></div>
+    <div class="hero-bg parallax-bg">
+      <img src="img/hero/hero-bg.jpg" alt="Ice hockey action" class="hero-bg-img">
+    </div>
     <div class="hero-particles" id="hero-particles"></div>
     <div class="hero-content">
       <div class="hero-badge">Milan-Cortina 2026</div>
@@ -369,19 +371,68 @@
     </div>
   </section>
 
-  <!-- ============ GALLERY (Placeholder) ============ -->
+  <!-- ============ GALLERY ============ -->
   <section class="section-full" id="gallery" style="background: var(--bg-dark-alt);">
     <div class="section" style="padding-top: 0;">
       <div class="section-header fade-in">
         <h2>Photo <span class="gold-text">Gallery</span></h2>
         <p class="section-subtitle">The moments that defined a generation</p>
       </div>
-      <div class="placeholder-section fade-in">
-        <h3 style="color: var(--gold);">Media Gallery</h3>
-        <p>Coming in Wave 3 — photos, videos, and lightbox viewer</p>
+      <div class="gallery-grid fade-in">
+        <div class="gallery-item gallery-item-wide">
+          <img src="img/hero/hero-overlay.jpg" alt="Hockey players on the ice" loading="lazy">
+          <div class="gallery-caption">The ice belongs to us</div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/gallery/hockey-action-1.jpg" alt="Hockey game action" loading="lazy">
+          <div class="gallery-caption">Game day intensity</div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/gallery/hockey-action-2.jpg" alt="Hockey players in action" loading="lazy">
+          <div class="gallery-caption">Relentless pressure</div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/gallery/hockey-action-3.jpg" alt="Ice hockey competition" loading="lazy">
+          <div class="gallery-caption">Battle for the puck</div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/gallery/hockey-action-4.jpg" alt="Hockey athlete" loading="lazy">
+          <div class="gallery-caption">Focus and determination</div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/gallery/celebration-1.jpg" alt="Hockey team celebration" loading="lazy">
+          <div class="gallery-caption">Victory embrace</div>
+        </div>
+        <div class="gallery-item gallery-item-wide">
+          <img src="img/gallery/hockey-arena.jpg" alt="Hockey arena" loading="lazy">
+          <div class="gallery-caption">Milano Santagiulia Arena — the stage for history</div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/gallery/hockey-action-5.jpg" alt="Hockey game" loading="lazy">
+          <div class="gallery-caption">Speed and skill</div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/gallery/hockey-action-6.jpg" alt="Ice hockey match" loading="lazy">
+          <div class="gallery-caption">On the attack</div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/gallery/usa-flag.jpg" alt="American flag" loading="lazy">
+          <div class="gallery-caption">Red, white, blue — and gold</div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/gallery/gold-medal.jpg" alt="Gold medal" loading="lazy">
+          <div class="gallery-caption">The ultimate prize — times two</div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img src="" alt="" id="lightbox-img">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer" id="footer">
